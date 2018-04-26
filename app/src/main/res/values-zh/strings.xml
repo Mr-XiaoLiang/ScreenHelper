@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">灰色空间</string>
+    <string name="navigation_drawer_open">打开抽屉</string>
+    <string name="navigation_drawer_close">关闭抽屉</string>
+    <string name="copy_success">复制完成</string>
+    <string name="no_permission">您还未获得权限</string>
+    <string name="no_root">您未获得屏幕设置修改权限，并且未授予root权限，无法进行操作。</string>
+    <string name="adb_hint">请手机连接电脑，开启adb，输入如下命令：\n</string>
+    <string name="positive">确定</string>
+    <string name="hint_icon">隐藏APP图标</string>
+    <string name="hint_icon_summary">隐藏后，可以通过长按状态栏按钮，进入当前管理页面。（仅对Android N及以上用户开放，因为其他用户隐藏后将找不到应用入口）</string>
+    <string name="hint_related">关联APP</string>
+    <string name="hint_related_summary">关联后将会在你打开相应应用时，自动修改屏幕显示。但是需要授权辅助服务。</string>
+    <string name="dialog_related_title">您未开启权限</string>
+    <string name="dialog_related_message">您需要开启权限后，才能使软件自动关联其他应用。软件并不会增加额外的消耗，也不会有额外的服务开支。</string>
+    <string name="refused">不开启</string>
+    <string name="travel_to">前往设置</string>
+    <string name="accessibility_service_helper">本服务用于自动关联墨水屏设置。自动针对应用切换是否显示墨水屏模式。</string>
+</resources>

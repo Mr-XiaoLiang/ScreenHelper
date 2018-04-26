@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/appIconView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_launcher_round"/>
+    
+    <TextView
+        android:id="@+id/appNameView"
+        app:layout_constraintLeft_toRightOf="@id/appIconView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/appSwitch"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:textColor="#333"
+        android:text="@string/app_name"
+        android:layout_width="0px"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/appPkgView"
+        app:layout_constraintLeft_toLeftOf="@id/appNameView"
+        app:layout_constraintTop_toBottomOf="@id/appNameView"
+        app:layout_constraintRight_toRightOf="@id/appNameView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:text="@string/app_name"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/appSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appNameView"
+        android:layout_marginRight="10dp"/>
+
+</android.support.constraint.ConstraintLayout>
