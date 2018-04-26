@@ -16,7 +16,7 @@ class AppInfo (var appName: String,var pkgName: String,var appIcon: Drawable?){
         fun create(packageInfo: PackageInfo,packageManager: PackageManager): AppInfo{
 
             return AppInfo(
-                    packageInfo.applicationInfo.loadLabel(packageManager).toString()?:"",
+                    packageInfo.applicationInfo.loadLabel(packageManager).toString(),
                     packageInfo.packageName?:"",
                     packageManager.getApplicationIcon(packageInfo.applicationInfo)
             )

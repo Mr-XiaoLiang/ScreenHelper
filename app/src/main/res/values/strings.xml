@@ -17,4 +17,7 @@
         <string name="refused">not open</string>
         <string name="travel_to">to set</string>
         <string name="accessibility_service_helper">This service is used to automatically associate ink screen settings. The ink screen mode is automatically switched for the application.</string>
+        <string name="alert_to_root">You do not have screen setup permissions. The software will not run. It is recommended to use the ADB mode to grant software permissions so that you do not use the Root phone. Of course, if you already have Root, you can use Root. </string>
+        <string name="i_have_root">I have Root</string>
+        <string name="try_to_root_error">Sorry, failed to get screen privileges through Root. </string>
 </resources>

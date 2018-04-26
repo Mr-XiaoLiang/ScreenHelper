@@ -17,4 +17,7 @@
     <string name="refused">不开启</string>
     <string name="travel_to">前往设置</string>
     <string name="accessibility_service_helper">本服务用于自动关联墨水屏设置。自动针对应用切换是否显示墨水屏模式。</string>
+    <string name="alert_to_root">您未获得屏幕设置权限。软件将无法运行。建议使用ADB方式授予软件权限，这样不用Root手机。当然，如果你已经Root，那么可以使用Root。</string>
+    <string name="i_have_root">我有Root</string>
+    <string name="try_to_root_error">抱歉，通过Root获取屏幕权限失败。</string>
 </resources>

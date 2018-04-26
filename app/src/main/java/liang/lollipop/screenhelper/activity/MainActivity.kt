@@ -9,10 +9,14 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import liang.lollipop.screenhelper.util.ShellUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import liang.lollipop.screenhelper.R
 import liang.lollipop.screenhelper.util.ScreenUtil
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.onComplete
+import org.jetbrains.anko.uiThread
 
 /**
  * 主页，设置的页面
@@ -34,6 +38,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         shell = "adb shell pm grant $packageName android.permission.WRITE_SECURE_SETTINGS"
 
         initView()
+
+        if(!ScreenUtil.hasPermission(this)){
+            AlertDialog.Builder(this)
+                    .setMessage(R.string.alert_to_root)
+                    .setPositiveButton(R.string.i_have_root){ dialog, _ ->
+                        tryToRoot()
+                        dialog.dismiss()
+                    }.show()
+        }
 
     }
 
@@ -88,6 +101,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val data = ClipData.newPlainText(getString(R.string.app_name),content.trim())
         cmb.primaryClip = data
         Snackbar.make(fab,getString(R.string.copy_success),Snackbar.LENGTH_SHORT).show()
+    }
+
+    private fun tryToRoot(){
+        doAsync {
+
+            ShellUtil.exeCmd("pm grant $packageName android.permission.WRITE_SECURE_SETTINGS")
+
+            onComplete {
+
+                uiThread {
+
+                    if(!ScreenUtil.hasPermission(this@MainActivity)){
+
+                        AlertDialog.Builder(this@MainActivity)
+                                .setMessage(getString(R.string.try_to_root_error))
+                                .show()
+
+                    }
+
+                }
+
+            }
+
+        }
     }
 
 }
