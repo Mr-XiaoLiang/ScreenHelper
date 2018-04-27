@@ -9,6 +9,7 @@ import android.support.annotation.RequiresApi
 import android.widget.Toast
 import liang.lollipop.screenhelper.R
 import liang.lollipop.screenhelper.activity.MainActivity
+import liang.lollipop.screenhelper.util.AppSettings
 import liang.lollipop.screenhelper.util.ScreenUtil
 
 
@@ -43,8 +44,9 @@ class QuickSettingService: TileService() {
     override fun onClick() {
         super.onClick()
         if(ScreenUtil.hasPermission(this)){
-            val status = ScreenUtil.getSimulateColorSpaceState(this)
-            ScreenUtil.setSimulateColorSpaceState(this,!status)
+            val status = !ScreenUtil.getSimulateColorSpaceState(this)
+            AppSettings.isOpen(this,status)
+            ScreenUtil.setSimulateColorSpaceState(this,status)
         }else{
             Toast.makeText(this, R.string.no_permission,Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainActivity::class.java))

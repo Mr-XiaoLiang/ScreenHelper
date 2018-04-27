@@ -49,7 +49,7 @@ class HelperService: AccessibilityService() {
 
     private fun checkPackage(pkgName: String){
 
-        val isOpen = dbHelper.isExist(pkgName)
+        val isOpen = dbHelper.isExist(pkgName) || AppSettings.isOpen(this)
 
         Log.d("HelperService","onAccessibilityEvent -> $isOpen")
 
