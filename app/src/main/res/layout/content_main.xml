@@ -8,17 +8,27 @@
     tools:context=".activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ImageView
+    <android.support.v7.widget.CardView
         android:id="@+id/logoView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         app:layout_constraintBottom_toTopOf="@id/infoView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.40"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher_foreground"
+            android:background="@mipmap/ic_launcher_background"/>
+
+    </android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/infoView"

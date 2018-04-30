@@ -8,11 +8,13 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import android.view.View
 import liang.lollipop.screenhelper.util.ShellUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import liang.lollipop.screenhelper.R
+import liang.lollipop.screenhelper.util.AppSettings
 import liang.lollipop.screenhelper.util.ScreenUtil
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.onComplete
@@ -32,8 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        isOpenSimulateColorSpace = ScreenUtil.getSimulateColorSpaceState(this)
 
         shell = "adb shell pm grant $packageName android.permission.WRITE_SECURE_SETTINGS"
 
@@ -63,6 +63,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        isOpenSimulateColorSpace = ScreenUtil.getSimulateColorSpaceState(this)
+    }
+
     override fun onClick(v: View?) {
 
         when(v){
@@ -70,6 +75,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             fab -> if(ScreenUtil.hasPermission(this)){
 
                 isOpenSimulateColorSpace = !isOpenSimulateColorSpace
+                AppSettings.isOpen(this,isOpenSimulateColorSpace)
                 ScreenUtil.setSimulateColorSpaceState(this,isOpenSimulateColorSpace)
 
             }else{
@@ -125,6 +131,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
+    }
+
+    override fun onBackPressed() {
+        if(drawerLayout.isDrawerOpen(Gravity.START)){
+            drawerLayout.closeDrawer(Gravity.START)
+            return
+        }
+        super.onBackPressed()
     }
 
 }

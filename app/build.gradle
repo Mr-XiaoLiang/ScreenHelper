@@ -10,8 +10,8 @@ android {
         applicationId "liang.lollipop.screenhelper"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
     }
     buildTypes {
         release {
@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation 'com.android.support:cardview-v7:27.1.1'
 }

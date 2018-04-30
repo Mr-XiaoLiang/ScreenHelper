@@ -24,10 +24,10 @@ class QuickSettingService: TileService() {
         //        toggleState = type;
         val icon: Icon
         if (isOpen) {
-            icon = Icon.createWithResource(applicationContext, R.drawable.ic_invert_colors_white_24dp)
+            icon = Icon.createWithResource(applicationContext, R.drawable.ic_import_contacts_white_24dp)
             qsTile.state = Tile.STATE_ACTIVE//更改成活跃状态
         } else {
-            icon = Icon.createWithResource(applicationContext, R.drawable.ic_invert_colors_off_white_24dp)
+            icon = Icon.createWithResource(applicationContext, R.drawable.ic_import_contacts_white_24dp)
             qsTile.state = Tile.STATE_INACTIVE// 更改成非活跃状态
         }
         qsTile.icon = icon//设置图标
@@ -47,6 +47,7 @@ class QuickSettingService: TileService() {
             val status = !ScreenUtil.getSimulateColorSpaceState(this)
             AppSettings.isOpen(this,status)
             ScreenUtil.setSimulateColorSpaceState(this,status)
+            updateTileState(status)
         }else{
             Toast.makeText(this, R.string.no_permission,Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainActivity::class.java))

@@ -20,4 +20,5 @@
     <string name="alert_to_root">您未获得屏幕设置权限。软件将无法运行。建议使用ADB方式授予软件权限，这样不用Root手机。当然，如果你已经Root，那么可以使用Root。</string>
     <string name="i_have_root">我有Root</string>
     <string name="try_to_root_error">抱歉，通过Root获取屏幕权限失败。</string>
+    <string name="quick_setting_name">阅读模式</string>
 </resources>
