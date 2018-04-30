@@ -31,6 +31,7 @@ class QuickSettingService: TileService() {
             qsTile.state = Tile.STATE_INACTIVE// 更改成非活跃状态
         }
         qsTile.icon = icon//设置图标
+        qsTile.label = getString(R.string.quick_setting_name)
         qsTile.updateTile()//更新Tile
     }
 
