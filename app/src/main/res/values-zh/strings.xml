@@ -21,4 +21,10 @@
     <string name="i_have_root">我有Root</string>
     <string name="try_to_root_error">抱歉，通过Root获取屏幕权限失败。</string>
     <string name="quick_setting_name">阅读模式</string>
+    <string name="hint_quick_setting">隐藏快捷切换按钮</string>
+    <string name="hint_quick_setting_summary">隐藏应用的快捷设置按钮，如果桌面不显示，那么可以通过点击添加按钮，添加桌面快捷方式。</string>
+    <string name="add_quick_btn">添加快捷按钮</string>
+    <string name="i_know">我知道了</string>
+    <string name="help_shortcut">您的手机版本已经支持快捷方式，请尝试长按应用图标。如果没有任何反应，请点击下方的添加按钮。如果弹出快捷方式，请拖拽至桌面。</string>
+    <string name="shortcut_added">快捷方式已添加</string>
 </resources>

@@ -52,4 +52,12 @@
         app:layout_constraintTop_toTopOf="@id/appNameView"
         android:layout_marginRight="10dp"/>
 
+    <View
+        android:layout_width="0px"
+        android:layout_height="1px"
+        android:background="#DDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/appIconView"
+        app:layout_constraintRight_toRightOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

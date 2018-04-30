@@ -1,104 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.AppSettingsFragment"
     android:background="@android:color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragment.AppSettingsFragment">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/showIconTitle"
-            android:layout_width="0px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hint_icon"
             android:textColor="#333"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/showIconSwitch"
-            android:layout_marginRight="15dp"/>
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/showIconHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_help_outline_white_24dp"
+            android:tint="@color/colorPrimary"/>
+
+        <Space
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/showIconSwitch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/showIconTitle"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="10dp"/>
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#666"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/showIconSummary"
+            android:id="@+id/quickSettingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_quick_setting"
+            android:textColor="#333"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/quickSettingHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_help_outline_white_24dp"
+            android:tint="@color/colorPrimary"/>
+
+        <Space
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:text="@string/hint_icon_summary"
-            android:textColor="#666"
-            android:textSize="14sp"
-            app:layout_constraintLeft_toLeftOf="@id/showIconTitle"
-            app:layout_constraintTop_toBottomOf="@id/showIconTitle"
-            app:layout_constraintRight_toRightOf="@id/showIconTitle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="10dp"/>
+            android:layout_weight="1"/>
 
-    </android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/quickSettingSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <android.support.constraint.ConstraintLayout
+    </LinearLayout>
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="1px"
+        android:background="#666"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/relatedTitle"
-            android:layout_width="0px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hint_related"
             android:textColor="#333"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/relatedSwitch"
-            android:layout_marginRight="15dp"/>
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/relatedHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_help_outline_white_24dp"
+            android:tint="@color/colorPrimary"/>
+
+        <Space
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/relatedSwitch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/relatedTitle"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="10dp"/>
+            android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/relatedSummary"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:text="@string/hint_related_summary"
-            android:textColor="#666"
-            android:textSize="14sp"
-            app:layout_constraintLeft_toLeftOf="@id/relatedTitle"
-            app:layout_constraintTop_toBottomOf="@id/relatedTitle"
-            app:layout_constraintRight_toRightOf="@id/relatedTitle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#666"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

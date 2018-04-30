@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GraySpace</string>
-        <string name="navigation_drawer_open">drawer open</string>
-        <string name="navigation_drawer_close">drawer close</string>
-        <string name="copy_success">copying completed</string>
-        <string name="no_permission">You have not yet gained permission</string>
-        <string name="no_root">You do not have permission to modify the screen settings, and you do not grant root privileges to operate.</string>
-        <string name="adb_hint">Please connect the phone to the computer, open adb, enter the following command:\n</string>
-        <string name="positive">OK</string>
-        <string name="hint_icon">Hide APP icon</string>
-        <string name="hint_icon_summary">After being hidden, you can enter the current management page by pressing and holding the status bar button. (Only for users of Android N and above, because other users will not find the application entry after hiding)</string>
-        <string name="hint_related">Associate APP</string>
-        <string name="hint_related_summary">will automatically change the screen display when you open the application. However, you need to authorize ancillary services.</string>
-        <string name="dialog_related_title">You do not have permission to open</string>
-        <string name="dialog_related_message">You need to have permission to enable the software to automatically associate with other applications. The software does not add extra consumption, nor does it have extra service expenses.</string>
-        <string name="refused">not open</string>
-        <string name="travel_to">to set</string>
-        <string name="accessibility_service_helper">This service is used to automatically associate ink screen settings. The ink screen mode is automatically switched for the application.</string>
-        <string name="alert_to_root">You do not have screen setup permissions. The software will not run. It is recommended to use the ADB mode to grant software permissions so that you do not use the Root phone. Of course, if you already have Root, you can use Root. </string>
-        <string name="i_have_root">I have Root</string>
-        <string name="try_to_root_error">Sorry, failed to get screen privileges through Root. </string>
-        <string name="quick_setting_name">Reading</string>
+        
+    <string name="navigation_drawer_open">drawer open</string>
+        
+    <string name="navigation_drawer_close">drawer close</string>
+        
+    <string name="copy_success">copying completed</string>
+        
+    <string name="no_permission">You have not yet gained permission</string>
+        
+    <string name="no_root">You do not have permission to modify the screen settings, and you do not grant root privileges to operate.</string>
+        
+    <string name="adb_hint">Please connect the phone to the computer, open adb, enter the following command:\n</string>
+        
+    <string name="positive">OK</string>
+        
+    <string name="hint_icon">Hide APP icon</string>
+        
+    <string name="hint_icon_summary">After being hidden, you can enter the current management page by pressing and holding the status bar button. (Only for users of Android N and above, because other users will not find the application entry after hiding)</string>
+        
+    <string name="hint_related">Associate APP</string>
+        
+    <string name="hint_related_summary">will automatically change the screen display when you open the application. However, you need to authorize ancillary services.</string>
+        
+    <string name="dialog_related_title">You do not have permission to open</string>
+        
+    <string name="dialog_related_message">You need to have permission to enable the software to automatically associate with other applications. The software does not add extra consumption, nor does it have extra service expenses.</string>
+        
+    <string name="refused">not open</string>
+        
+    <string name="travel_to">to set</string>
+        
+    <string name="accessibility_service_helper">This service is used to automatically associate ink screen settings. The ink screen mode is automatically switched for the application.</string>
+
+    <string name="alert_to_root">You do not have screen setup permissions. The software will not run. It is recommended to use the ADB mode to grant software permissions so that you do not use the Root phone. Of course, if you already have Root, you can use Root. </string>
+        
+    <string name="i_have_root">I have Root</string>
+        
+    <string name="try_to_root_error">Sorry, failed to get screen privileges through Root. </string>
+
+    <string name="quick_setting_name">Reading</string>
+
+    <string name="hint_quick_setting"> hide shortcut switch button </string>
+
+    <string name="hint_quick_setting_summary">hides the application\'s shortcut settings button, if the desktop does not display, you can click on the button to add a desktop shortcut.</string>
+
+    <string name="add_quick_btn">Add shortcut button </string>
+
+    <string name="i_know">I know</string>
+
+    <string name="help_shortcut">Your phone version already supports shortcuts. Try long press on the app icon. If nothing happens, click the Add button below. If a shortcut pops up, drag it to the desktop.</string>
+
+    <string name="shortcut_added">shortcut has been added</string>
 </resources>

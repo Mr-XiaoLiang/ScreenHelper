@@ -3,7 +3,13 @@ package liang.lollipop.screenhelper.util
 import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.ShortcutManager
+import android.graphics.Bitmap
+import android.os.Build
+import android.support.v7.app.AlertDialog
+import liang.lollipop.screenhelper.activity.QuickSwitchActivity
 import liang.lollipop.screenhelper.activity.StartActivity
 import liang.lollipop.screenhelper.bean.AppInfo
 
@@ -12,6 +18,31 @@ import liang.lollipop.screenhelper.bean.AppInfo
  * @author Lollipop
  */
 object AppUtils {
+
+    // Action 添加Shortcut
+    private const val ACTION_ADD_SHORTCUT = "com.android.launcher.action.INSTALL_SHORTCUT"
+
+    /**
+     * 添加快捷方式
+     *
+     * @param context      context
+     * @param actionIntent 要启动的Intent
+     * @param name         name
+     */
+    fun addShortcut(context: Context, actionIntent: Intent, name: String,
+                    allowRepeat: Boolean, iconBitmap: Bitmap) {
+        val addShortcutIntent = Intent(ACTION_ADD_SHORTCUT)
+        // 是否允许重复创建
+        addShortcutIntent.putExtra("duplicate", allowRepeat)
+        // 快捷方式的标题
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name)
+        // 快捷方式的图标
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON, iconBitmap)
+        // 快捷方式的动作
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, actionIntent)
+        context.sendBroadcast(addShortcutIntent)
+    }
+
 
     /**
      * 获取非系统应用信息列表
@@ -65,6 +96,10 @@ object AppUtils {
         return isHintLauncherIcon(context,ComponentName(context,StartActivity::class.java))
     }
 
+    fun isHintQuickSettingIcon(context: Activity): Boolean{
+        return isHintLauncherIcon(context,ComponentName(context,QuickSwitchActivity::class.java))
+    }
+
     fun isHintLauncherIcon(context: Activity,componentName: ComponentName): Boolean{
         val packageManager = context.packageManager
         return when(packageManager.getComponentEnabledSetting(componentName)){
@@ -96,11 +131,19 @@ object AppUtils {
         }
     }
 
+    fun changeQuickSettingIconStatus(context: Activity, isShow: Boolean){
+        changeIconStatus(context,isShow,ComponentName(context,QuickSwitchActivity::class.java))
+    }
+
     fun changeLauncherIconStatus(context: Activity, isShow: Boolean){
+        changeIconStatus(context,isShow,ComponentName(context,StartActivity::class.java))
+    }
+
+    private fun changeIconStatus(context: Activity,isShow: Boolean,componentName: ComponentName){
         if(isShow){
-            showLauncherIcon(context,ComponentName(context,StartActivity::class.java))
+            showLauncherIcon(context,componentName)
         }else{
-            hintLauncherIcon(context,ComponentName(context,StartActivity::class.java))
+            hintLauncherIcon(context,componentName)
         }
     }
 

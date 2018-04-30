@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             copyBtn -> {
+
                 copy(shell)
 
             }
@@ -139,6 +140,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
         super.onBackPressed()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if(drawerLayout.isDrawerOpen(Gravity.START)){
+            drawerLayout.closeDrawer(Gravity.START)
+        }
     }
 
 }

@@ -5,7 +5,10 @@
 
     <uses-permission
         android:name="android.permission.WRITE_SECURE_SETTINGS"
-        tools:ignore="ProtectedPermissions"/>
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 添加快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <application
         android:allowBackup="true"
@@ -17,24 +20,32 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.StartActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.Transparent"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:icon="@mipmap/ic_launcher_round"
+            android:theme="@style/AppTheme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+
         </activity>
+
         <service
             android:name=".service.QuickSettingService"
             android:icon="@drawable/ic_import_contacts_white_24dp"
@@ -55,6 +66,18 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/helper_service_config" />
         </service>
+
+        <activity android:name=".activity.QuickSwitchActivity"
+            android:icon="@mipmap/ic_quick_launcher_round"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.Transparent"
+            android:label="@string/quick_setting_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

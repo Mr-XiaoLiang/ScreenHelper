@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_quick_launcher_round"
+        android:shortcutId="quickSetting"
+        android:shortcutDisabledMessage="@string/quick_setting_name"
+        android:shortcutLongLabel="@string/quick_setting_name"
+        android:shortcutShortLabel="@string/quick_setting_name">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="liang.lollipop.screenhelper.activity.QuickSwitchActivity"
+            android:targetPackage="liang.lollipop.screenhelper"/>
+    </shortcut>
+</shortcuts>

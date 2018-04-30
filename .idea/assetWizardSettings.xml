@@ -19,7 +19,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundImage" value="$USER_HOME$/Pictures/我的图片/PSD/screen_helper_bg.png" />
-                                      <entry key="foregroundImage" value="$USER_HOME$/Pictures/我的图片/PSD/screen_helper_fg.png" />
+                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
+                                      <entry key="foregroundImage" value="$USER_HOME$/Pictures/我的图片/PSD/screen_helper_fg_quick.png" />
+                                      <entry key="outputName" value="ic_quick_launcher" />
                                       <entry key="showGrid" value="true" />
                                     </map>
                                   </option>
